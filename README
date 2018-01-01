@@ -1,0 +1,96 @@
+Name: Hongru Qi 1500246
+Partner: Jiahui Wang 1497960
+Section: EA1
+
+List of files:
+* ItalianCannon.cpp
+* mode0.cpp
+* mode0.h
+* mode1.cpp
+* mode1.h
+* mode2.cpp
+* mode2.h
+* Makefile
+* README
+* Wiring.JPG
+* StartMenu.JPG
+* TankSelection.JPG
+* InGame.JPG
+
+Accessories:
+* Arduino Mega Board
+* Screen for Arduino Mega Board
+* Joy Stick for Arduino Mega Board
+
+Wiring instructions:
+As shown in Wiring.jpg
+Joy Stick (Board Pins <--> Arduino Pins):
+* GND <--> GND (board bus)
+* 5V	<-->	5V (board bus)
+* VRX	<-->	Analog Pin 1
+* VRY	<-->	Analog Pin 0
+* SW	<-->	Digital Pin 2
+Screen (Board Pins <--> Arduino Pins):
+* GND <--> GND
+* Vin <--> 5V
+* 3Vo <--> NOT CONNECTED
+* CLK <--> 52
+* MISO <--> 50
+* MOSI <--> 51
+* CS <--> 10
+* D/C <--> 9
+* RST <--> NOT CONNECTED
+* Lite <--> NOT CONNECTED
+* Y+ <--> A2 (analog pin)
+* X+ <--> 4  (digital pin)
+* Y- <--> 5  (digital pin)
+* X- <--> A3 (analog pin)
+* IM0 - IM3 <--> NOT CONNECTED (they expect a 3.3v signal, DON'T CONNECT!)
+* CCS <--> 6
+* CD <--> NOT CONNECTED
+Other
+* Arduino 1 pin TX3 <--> Arduino 2 pin RX3
+* Arduino 1 pin RX3 <--> Arduino 2 pin TX3
+* Arduino 2 pin 13 <--> Resistor (560 Ohm) <---> Arduino 2 GND
+
+Running Instructions:
+1. Wire two Arduino Mega Boards as stated above and connect both to a computer
+2. Make upload code to both boards
+3. Restart the board if the start menu is different as the description.
+
+Description:
+This game is a turn-based two player game where players can choose their favored
+tank and attack opponent's tank by picking an appropriate angle and initial
+speed. The side who lost all HP first will lose the game.
+
+After uploading the code, user should see the screen of the board whose pin 13
+is connected to GND shows "Wait for beginning" and the other one shows the name
+of the game and an arrow pointing to "Start". Click the joystick to get into the
+next page where user is able to scroll up and down with joystick to choose who
+will take the first round. In this case, "Server start" means the one that is
+making choice right now start first and "Client start" means the opposite.
+"Random start" will simply let the system randomly choose who will take the
+first hand (StartMenu.JPG). The next page is to let both users choose their
+tank. There are three tank in total, which owns different size, HP and deals
+different damage. The image shows the exact size of the tank as in the game
+(TankSelection.JPG). In the game, user who is taking round can choose the size
+of the cannon by scrolling joystick up and down. Click joystick to confirm and
+then change the angle and initial speed with the joystick and click to make a
+shot. Notice that there is wind speed which will affect the initial speed. The
+height of wall and wind speed will change each game based on a math algorithm
+(InGame.JPG). The art of the tank is futher explained in the attached file
+Tank.JPG.
+
+
+Alarm:
+Consider the calculating rate of Arduino Board, user may not operate too fast
+(such as insanely make multiple shots on both side without changing any angle
+and speed) which may cause some bug. Generally, the game is fine. If there is
+bug shows up, sorry about it but please restart the board. Also, please let the
+board rest for a while after long time playing when there is bug showing up if
+without any inappropriate operation.
+
+
+Function:
+
+Have fun with our game ^_^
